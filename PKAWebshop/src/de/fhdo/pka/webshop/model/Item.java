@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 /**
  * Superclass for all available items in our shop
  * 
- * @author Lars
+ * @author Team Mettriegel
  * @version 1.0
  */
 

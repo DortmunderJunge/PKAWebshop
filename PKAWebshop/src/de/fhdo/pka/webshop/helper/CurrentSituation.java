@@ -17,8 +17,8 @@ public class CurrentSituation {
 
 	private static final Customer C = new Customer("Ingrid Meier",
 			"Opernplatz 42", new Credentials("ingrid@meier.de", "abc123"));
-	private static final Customer ME = new Customer("Lars Lewandowski",
-			"Schlossallee 1", new Credentials("lars@lewandowski.de", "abc123"));
+	private static final Customer ME = new Customer("Mett Riegel",
+			"Schlossallee 1", new Credentials("mett@riegel.de", "mett"));
 	private static final Customer KG = new Customer("Kevin Grosskreutz",
 			"Evinger Straﬂe 286", new Credentials("kevin@bvb.de", "kevin")); // because he is awesome!
 	

@@ -27,12 +27,9 @@ public class CustomerController {
 				ui.logInFailed();
 			}
 		}
-	}
-	
-	public void loggedIn() {
 		ui.showPersonalizedWelcomeMessage(customer);
 	}
-
+	
 	public Customer getCustomer() {
 		return customer;
 	}

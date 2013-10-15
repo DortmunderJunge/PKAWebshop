@@ -23,14 +23,6 @@ public class CartController {
 		ui.showCart(cart);
 	}
 
-	public void clearCart() {
-		cart.clear();
-	}
-
-	public void cartCleared() {
-		ui.cartCleared();
-	}
-
 	public void removeFromCart(Item item) {
 		cart.remove(item);
 	}

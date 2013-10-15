@@ -1,7 +1,7 @@
 package de.fhdo.pka.webshop.model;
 
 /**
- * @author Lars
+ * @author Team Mettriegel
  * @version 1.0
  */
 

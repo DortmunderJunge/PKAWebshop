@@ -3,7 +3,7 @@ package de.fhdo.pka.webshop.model;
 import java.math.BigDecimal;
 
 /**
- * @author Lars
+ * @author Team Mettriegel
  * @version 1.0
  */
 

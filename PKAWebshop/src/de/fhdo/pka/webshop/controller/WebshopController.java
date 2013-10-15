@@ -42,8 +42,9 @@ public class WebshopController {
 			paymentController.pay(cartController.getCart(), customerController.getCustomer());
 			break;
 		case REMOVE_FROM_CART:
+			int removeQuantity = cartController.getCart().getItems().get(itemController.getItem());
 			cartController.removeFromCart(itemController.getItem());
-			/** TODO: menge und so */
+			itemController.put(itemController.getItem(), removeQuantity);
 			break;
 		case SELECT_ITEM:
 			itemController.selectItem();
@@ -52,8 +53,9 @@ public class WebshopController {
 			itemController.showItem();
 			break;
 		case ADD_TO_CART:
-			cartController.addToCart(itemController.getItem(), itemController.selectQuantity());
-			itemController.take(itemController.getItem(), itemController.selectQuantity());
+			int addQuantity = itemController.selectQuantity();
+			cartController.addToCart(itemController.getItem(), addQuantity);
+			itemController.take(itemController.getItem(), addQuantity);
 			break;
 		case SHOW_CART:
 			try {

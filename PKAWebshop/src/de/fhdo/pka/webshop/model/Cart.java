@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author Lars
+ * @author Team Mettriegel
  * @version 1.0
  */
 

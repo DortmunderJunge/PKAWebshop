@@ -12,7 +12,7 @@ import de.fhdo.pka.webshop.model.Item;
 import de.fhdo.pka.webshop.model.Step;
 
 /**
- * @author Lars
+ * @author Team Mettriegel
  * @version 1.0
  */
 
@@ -64,8 +64,9 @@ public class Ui {
 	public void showCart(Cart cart) {
 		if (cart.getItems() != null) {
 			System.out.println("Your cart contains the following items:");
+			int i = 1;
 			for (Map.Entry<Item, Integer> cartItem : cart.getItems().entrySet()) {
-				System.out.printf("%d x %s\n", cartItem.getValue(), cartItem
+				System.out.printf("%d) %d x %s\n", i++, cartItem.getValue(), cartItem
 						.getKey().getName());
 			}
 		} else {
@@ -126,14 +127,14 @@ public class Ui {
 	public int selectQuantity(Item item) {
 		int quantity;
 		boolean isValidQuantity = true;
-		System.out.printf("How many pieces of %s would you like to buy?",
+		System.out.printf("How many pieces of %s would you like to buy?\n",
 				item.getName());
 		do {
 			isValidQuantity = true;
 			quantity = sc.nextInt();
 			if (quantity > item.getInStock()) {
 				System.out
-						.printf("Sorry! There are only %d pieces of %s left. Please select another value!",
+						.printf("Sorry! There are only %d pieces of %s left. Please select another value!\n",
 								item.getInStock(), item.getName());
 				isValidQuantity = false;
 			}
@@ -144,19 +145,7 @@ public class Ui {
 		} while (!isValidQuantity);
 		return quantity;
 	}
-
-	public void cartCleared() {
-		System.out.println("Your cart has been cleared!");
-	}
-
-	private void showNextSteps(List<Step> steps) {
-		System.out.println("What would you like to do next?");
-		int i = 1;
-		for (Step step : steps) {
-			System.out.printf("%d) %s\n", i++, step.getKey());
-		}
-	}
-
+	
 	public Item chooseItem(List<Item> itemlist) {
 		System.out.println("Please choose an item by its number.");
 		int index = sc.nextInt();
@@ -182,4 +171,13 @@ public class Ui {
 	public void printException(Exception e) {
 		System.out.println(e.getMessage());
 	}
+	
+	private void showNextSteps(List<Step> steps) {
+		System.out.println("What would you like to do next?");
+		int i = 1;
+		for (Step step : steps) {
+			System.out.printf("%d) %s\n", i++, step.getKey());
+		}
+	}
+
 }

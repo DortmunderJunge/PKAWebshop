@@ -2,6 +2,7 @@ package de.fhdo.pka.webshop.controller;
 
 import java.util.LinkedList;
 
+import Exceptions.EmptyCartException;
 import de.fhdo.pka.webshop.model.Cart;
 import de.fhdo.pka.webshop.model.Item;
 import de.fhdo.pka.webshop.view.Ui;
@@ -17,9 +18,6 @@ public class CartController {
 	}
 
 	public void showCart() throws EmptyCartException {
-		if (cart.getItems().isEmpty()) {
-			throw new EmptyCartException();
-		}
 		ui.showCart(cart);
 	}
 

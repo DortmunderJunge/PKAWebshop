@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+import Exceptions.EmptyCartException;
 import de.fhdo.pka.webshop.model.Cart;
 import de.fhdo.pka.webshop.model.Credentials;
 import de.fhdo.pka.webshop.model.Customer;
@@ -60,8 +61,9 @@ public class Ui {
 	/**
 	 * @param cart
 	 *            your cart
+	 * @throws EmptyCartException 
 	 */
-	public void showCart(Cart cart) {
+	public void showCart(Cart cart) throws EmptyCartException {
 		if (cart.getItems() != null) {
 			System.out.println("Your cart contains the following items:");
 			int i = 1;
@@ -70,7 +72,7 @@ public class Ui {
 						.getKey().getName());
 			}
 		} else {
-			System.out.println("You do not have any items in your cart");
+			throw new EmptyCartException();
 		}
 	}
 
